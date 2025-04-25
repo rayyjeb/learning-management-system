@@ -5,6 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useCarousel } from '@/hooks/useCarousel'
 import { Skeleton } from '@/components/ui/skeleton'
+import { useGetCoursesQuery } from '@/state/api'
+import CourseCardSearch from '@/components/CourseCardSearch'
+import { useRouter } from 'next/navigation'
 
 const LoadingSkeletion = () => {
     return (
@@ -37,7 +40,13 @@ const LoadingSkeletion = () => {
 }
 
 const Landing = () => {
+    const router = useRouter()
     const currentImage = useCarousel({ totalImages: 3 })
+    const { data: courses, isLoading, isError } = useGetCoursesQuery({})
+    const handleCourseClick = (courseId: string) => {
+        router.push(`/search?id=${courseId}`)
+    }
+    if(isLoading)return <LoadingSkeletion/>
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -100,6 +109,19 @@ const Landing = () => {
                 </div>
                 <div className='landing__courses'>
                     {/* courses display */}
+                    {courses &&
+                        courses.slice(0, 4).map((course, index) => (
+                            <motion.div
+                                key={course.courseId}
+                                initial={{ y: 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                                viewport={{ amount: 0.4 }}
+                                className='landing__featured'>
+                                <CourseCardSearch course={course} onClick={()=>handleCourseClick(course.courseId)} />
+                            </motion.div>
+                        ))
+                    }
                 </div>
             </motion.div>
         </motion.div>
