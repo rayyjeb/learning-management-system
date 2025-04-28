@@ -26,7 +26,7 @@ const customBaseQuery = async (
     if (result.error) {
       const errorData = result.error.data;
       const errorMessage =
-        errorData?.message || 
+        errorData?.message ||
         result.error.status.toString() ||
         "An error occurred";
       toast.error(`Error: ${errorMessage}`);
@@ -83,7 +83,7 @@ export const api = createApi({
     =============== 
     */
     getCourses: build.query<Course[], { category?: string }>({
-      query: ({ category }) => ({ 
+      query: ({ category }) => ({
         url: "courses",
         params: { category },
       }),
