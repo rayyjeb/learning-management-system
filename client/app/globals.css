@@ -1433,11 +1433,11 @@ input[type="color"] {
 }
 
 .app-sidebar__nav-item {
-  @apply group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:py-4 hover:bg-customgreys-secondarybg;
+  @apply group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:py-4 ;
 }
 
 .app-sidebar__nav-button {
-  @apply gap-4 p-8 hover:bg-customgreys-secondarybg group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center;
+  @apply gap-4 p-8 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center;
 }
 
 .app-sidebar__nav-link {
@@ -1564,3 +1564,8 @@ input[type="color"] {
 /* .cl-internal-1dauvpw{
   display: none;
 } */
+
+.cl-cardBox{
+  width: 80vw !important ;
+  height:60vh !important
+}

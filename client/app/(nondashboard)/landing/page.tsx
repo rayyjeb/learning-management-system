@@ -8,6 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { useGetCoursesQuery } from '@/state/api'
 import CourseCardSearch from '@/components/CourseCardSearch'
 import { useRouter } from 'next/navigation'
+import { useUser } from '@clerk/nextjs'
 
 const LoadingSkeletion = () => {
     return (
@@ -46,7 +47,7 @@ const Landing = () => {
     const handleCourseClick = (courseId: string) => {
         router.push(`/search?id=${courseId}`)
     }
-    if(isLoading)return <LoadingSkeletion/>
+    if (isLoading) return <LoadingSkeletion />
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -118,7 +119,7 @@ const Landing = () => {
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                                 viewport={{ amount: 0.4 }}
                                 className='landing__featured'>
-                                <CourseCardSearch course={course} onClick={()=>handleCourseClick(course.courseId)} />
+                                <CourseCardSearch course={course} onClick={() => handleCourseClick(course.courseId)} />
                             </motion.div>
                         ))
                     }
