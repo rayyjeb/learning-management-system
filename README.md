@@ -7,7 +7,7 @@ This project uses modern tech like **Docker, AWS Lambda, DynamoDB, Clerk authent
 
 ## 🚀 Tech Stack
 
-- **Frontend:** [Next.js 14](https://nextjs.org/), [Shadcn UI](https://ui.shadcn.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Frontend:** [Next.js 15](https://nextjs.org/), [Shadcn UI](https://ui.shadcn.dev/), [TypeScript](https://www.typescriptlang.org/)
 - **Authentication:** [Clerk](https://clerk.dev/)
 - **Backend / APIs:** Serverless via **AWS Lambda**
 - **Database:** [DynamoDB](https://aws.amazon.com/dynamodb/)
