@@ -9,6 +9,7 @@ import React from "react";
 // import CompletionPage from "./completion";
 import CheckoutDetailsPage from "./details";
 import PaymentPageContent from "./payment";
+import CompletionPage from "./completion";
 
 const CheckoutWizard = () => {
   const { isLoaded } = useUser();
@@ -21,9 +22,9 @@ const CheckoutWizard = () => {
       case 1:
         return <CheckoutDetailsPage />;
       case 2:
-        return <PaymentPageContent />;
+        return <CompletionPage />;
       case 3:
-        return "<CompletionPage />";
+        return <PaymentPageContent />;
       default:
         return <CheckoutDetailsPage />;
     }
