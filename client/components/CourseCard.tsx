@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
-import { formatPrice } from "@/src/lib/utils";
+import { formatPrice } from "@/lib/utils";
 
 const CourseCard = ({ course, onGoToCourse }: CourseCardProps) => {
   return (
